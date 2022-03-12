@@ -1,0 +1,11 @@
+table {
+  width: 300px;
+}
+
+:host{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
