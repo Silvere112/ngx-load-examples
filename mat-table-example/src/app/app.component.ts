@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { map, Observable, timer } from "rxjs";
 
 export interface PeriodicElement {
   name: string;
@@ -26,7 +27,15 @@ const ELEMENT_DATA: PeriodicElement[] = [
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent{
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  dataSource: Observable<PeriodicElement[]> = this.loadDataSource()
+
+  onReload() {
+    this.dataSource = this.loadDataSource()
+  }
+
+  private loadDataSource() {
+    return timer(3000).pipe(map(() => ELEMENT_DATA));
+  }
 }

@@ -1,11 +1,14 @@
 table {
   width: 300px;
+  height: 700px;
 }
 
 :host{
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 20px;
   height: 100%;
   width: 100%;
 }
