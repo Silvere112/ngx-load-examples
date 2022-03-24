@@ -1,6 +1,6 @@
 <button mat-raised-button (click)="onReload()">Reload</button>
 <div class="table-container">
-  <table [lodIsLoaded]="dataSource | async" mat-table [dataSource]="(dataSource | async) || []" class="mat-elevation-z8">
+  <table [loadIsLoaded]="dataSource | async" mat-table [dataSource]="(dataSource | async) || []" class="mat-elevation-z8">
 
     <ng-container matColumnDef="position">
       <th mat-header-cell *matHeaderCellDef> No. </th>
